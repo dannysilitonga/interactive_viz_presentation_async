@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" href="../revealjs-diagram.css">
+</head>
+<body>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="../revealjs-diagram.js"></script>
+  <script>
+
+    var treeData = {
+      name: 'Python Back End',
+      x0: window.diagram.height / 2,
+      y0: 0,
+      children: []
+    };
+
+    var _transitions = [
+      window.diagram.addItem('JavaScript Front End', 'Python Back End', treeData),
+    ];
+
+    var _inverse_transitions = [
+      window.diagram.removeItem('Python Back End', treeData),
+    ];
+
+    // start the tree
+    window.diagram.register('intro', function() {
+      window.diagram.init(treeData);
+    });
+  </script>
+</body>
